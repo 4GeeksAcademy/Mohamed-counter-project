@@ -8,11 +8,17 @@ import "bootstrap"
 // index.css'
 import '../styles/index.css'
 
+
+
 // components
-import Home from './components/Home';
+
+
+ import Counter from './components/Counter';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Home/>
+   
+    <Counter/>
+  
   </React.StrictMode>,
 )
