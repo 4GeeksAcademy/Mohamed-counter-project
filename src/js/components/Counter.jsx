@@ -13,6 +13,10 @@ const Counter = () => {
         return () => clearInterval(interval);
     }, []);
 
+    const formatCount = (count) => {
+        return count.toString().padStart(6, '0');
+    };
+
     const increment = () => setCount(count + 1);
     const decrement = () => setCount(count - 1);
    
@@ -22,7 +26,14 @@ const Counter = () => {
    
     return (
         <div className="counter-container">
-            <h1 className="counter-value">{count}</h1>
+            <div className="counter-display">
+                <div className="clock-icon"> ⏰</div>
+                {formatCount(count).split('').map((digit, index) => (
+                    <div key={index} className="digit-card"> 
+                        {digit}
+                    </div>
+                ))}
+            </div>
             <div className="counter-buttons">
                 <button onClick={increment} className="counter-button">+</button>
                 <button onClick={decrement} className="counter-button">-</button>
